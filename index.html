@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        background: #f2f2f2;
+        color: #222;
+        font-family:
+            -apple-system,
+            BlinkMacSystemFont,
+            "Helvetica Neue",
+            "Yu Gothic",
+            "Hiragino Kaku Gothic ProN",
+            Meiryo,
+            sans-serif;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        background: #fff;
+        min-height: 100vh;
+    }
+
+    .header-image {
+        width: 100%;
+        display: block;
+        height: auto;
+    }
+
+    .content {
+        padding: 45px 40px 60px;
+    }
+
+    h1 {
+        margin: 0 0 15px;
+        text-align: center;
+        font-size: 32px;
+        line-height: 1.5;
+        font-weight: 700;
+    }
+
+    .description {
+        margin: 0 auto 40px;
+        text-align: center;
+        color: #666;
+        font-size: 15px;
+        line-height: 1.8;
+    }
+
+    .section-title {
+        margin: 0 0 20px;
+        padding-left: 14px;
+        border-left: 5px solid #222;
+        font-size: 24px;
+        line-height: 1.4;
+    }
+
+    .summary-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .summary-link {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 18px 20px;
+        background: #f7f7f7;
+        border: 1px solid #e5e5e5;
+        border-radius: 10px;
+        color: #222;
+        text-decoration: none;
+        font-size: 16px;
+        line-height: 1.5;
+        transition: 0.2s;
+    }
+
+    .summary-link:hover {
+        background: #eeeeee;
+        transform: translateY(-1px);
+    }
+
+    .arrow {
+        flex-shrink: 0;
+        font-size: 20px;
+        color: #777;
+    }
+
+    .divider {
+        margin: 55px 0;
+        border: 0;
+        border-top: 1px solid #ddd;
+    }
+
+    .group {
+        margin-bottom: 38px;
+    }
+
+    .group-title {
+        margin: 0 0 15px;
+        padding-bottom: 8px;
+        border-bottom: 2px solid #222;
+        font-size: 20px;
+    }
+
+    .member-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .member {
+        display: block;
+        padding: 14px 15px;
+        border: 1px solid #e5e5e5;
+        border-radius: 8px;
+        background: #fafafa;
+        color: #222;
+        text-decoration: none;
+        font-size: 15px;
+        line-height: 1.5;
+        text-align: center;
+    }
+
+    .member.link:hover {
+        background: #eeeeee;
+    }
+
+    .member.no-link {
+        cursor: default;
+    }
+
+    footer {
+        padding: 25px 20px;
+        text-align: center;
+        color: #999;
+        font-size: 12px;
+        border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 700px) {
+        .content {
+            padding: 30px 18px 45px;
+        }
+
+        h1 {
+            font-size: 24px;
+        }
+
+        .description {
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .section-title {
+            font-size: 21px;
+        }
+
+        .summary-link {
+            padding: 16px;
+            font-size: 15px;
+        }
+
+        .member-list {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <!-- ヘッダー画像 -->
+    <img
+        class="header-image"
+        src="https://pbs.twimg.com/profile_banners/1384934196762660865/1789023094/1500x500"
+        alt="ぷいくまRUSTスキッパーズwithゆいねこおいで"
+    >
+
+    <main class="content">
+
+        <h1>ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ</h1>
+
+        <p class="description">
+            ぷいくまRUSTに関するまとめ・チームメンバー情報を掲載しています。
+        </p>
+
+        <!-- =========================================
+             Xまとめ
+             今後追加するときは、この部分だけ変更
+             ========================================= -->
+
+        <h2 class="section-title">Xまとめ</h2>
+
+        <div class="summary-list" id="summary-list"></div>
+
+        <hr class="divider">
+
+        <!-- =========================================
+             メンバー
+             ========================================= -->
+
+        <h2 class="section-title">現在のメンバー</h2>
+
+        <div id="members"></div>
+
+    </main>
+
+    <footer>
+        ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ
+    </footer>
+
+</div>
+
+
+<script>
+
+/* ==================================================
+   Xまとめ一覧
+
+   今後、9日目などを追加するときは
+   この中に1行追加するだけ。
+
+   書き方：
+   ["表示する名前", "XのURL"],
+   ================================================== */
+
+const summaries = [
+
+    [
+        "番外編・開幕前日公式練習鯖まとめ",
+        "https://x.com/zizizin0zi/status/2096080946571468891?s=20"
+    ],
+
+    [
+        "番外編・前日公式練習鯖ゴロリ先生によるぷいラス初心者講習まとめ",
+        "https://x.com/zizizin0zi/status/2096061456798323074?s=20"
+    ],
+
+    [
+        "1日目まとめ",
+        "https://x.com/zizizin0zi/status/2096346599907844391?s=20"
+    ],
+
+    [
+        "2日目まとめ",
+        "https://x.com/zizizin0zi/status/2096807112001364370?s=20"
+    ],
+
+    [
+        "3日目まとめ",
+        "https://x.com/zizizin0zi/status/2097049951402652087?s=20"
+    ],
+
+    [
+        "4日目まとめ",
+        "https://x.com/zizizin0zi/status/2097351319606665525?s=20"
+    ],
+
+    [
+        "5日目まとめ",
+        "https://x.com/zizizin0zi/status/2097674218079203515?s=20"
+    ],
+
+    [
+        "6日目まとめ",
+        "https://x.com/zizizin0zi/status/2098118322248434053?s=20"
+    ]
+
+];
+
+
+/* ==================================================
+   メンバー
+
+   URLがない人は
+   "url": ""
+   のままにしておく。
+   ================================================== */
+
+const memberGroups = [
+
+    {
+        name: "スキッパーズ",
+        members: [
+            {
+                name: "せんちょさん",
+                url: ""
+            },
+            {
+                name: "萌音いのり",
+                url: ""
+            },
+            {
+                name: "病冥しえる",
+                url: ""
+            },
+            {
+                name: "橘白夜",
+                url: ""
+            },
+            {
+                name: "ガンク",
+                url: ""
+            }
+        ]
+    },
+
+    {
+        name: "withゆいねこおいで",
+        members: [
+            {
+                name: "冥界おいで",
+                url: ""
+            },
+            {
+                name: "結犬",
+                url: ""
+            },
+            {
+                name: "月希猫",
+                url: ""
+            }
+        ]
+    },
+
+    {
+        name: "いのりの犬",
+        members: [
+            {
+                name: "井上無線",
+                url: ""
+            }
+        ]
+    }
+
+];
+
+
+/* ==================================================
+   Xまとめを画面に表示
+   ================================================== */
+
+const summaryList = document.getElementById("summary-list");
+
+summaries.forEach(function(item) {
+
+    const link = document.createElement("a");
+
+    link.className = "summary-link";
+    link.href = item[1];
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+
+    link.innerHTML = `
+        <span>${item[0]}</span>
+        <span class="arrow">›</span>
+    `;
+
+    summaryList.appendChild(link);
+
+});
+
+
+/* ==================================================
+   メンバーを画面に表示
+   ================================================== */
+
+const membersContainer = document.getElementById("members");
+
+memberGroups.forEach(function(group) {
+
+    const groupElement = document.createElement("section");
+
+    groupElement.className = "group";
+
+    const title = document.createElement("h3");
+
+    title.className = "group-title";
+    title.textContent = group.name;
+
+    groupElement.appendChild(title);
+
+    const memberList = document.createElement("div");
+
+    memberList.className = "member-list";
+
+    group.members.forEach(function(member) {
+
+        const memberElement = document.createElement(
+            member.url ? "a" : "div"
+        );
+
+        memberElement.className =
+            "member " +
+            (member.url ? "link" : "no-link");
+
+        memberElement.textContent = member.name;
+
+        if (member.url) {
+            memberElement.href = member.url;
+            memberElement.target = "_blank";
+            memberElement.rel = "noopener noreferrer";
+        }
+
+        memberList.appendChild(memberElement);
+
+    });
+
+    groupElement.appendChild(memberList);
+
+    membersContainer.appendChild(groupElement);
+
+});
+
+</script>
+
+</body>
+</html>
