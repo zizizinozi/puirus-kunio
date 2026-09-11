@@ -33,6 +33,7 @@
         min-height: 100vh;
     }
 
+    /* ヘッダー画像 */
     .header-image {
         width: 100%;
         display: block;
@@ -43,22 +44,24 @@
         padding: 45px 40px 60px;
     }
 
+    /* タイトル */
     h1 {
-        margin: 0 0 15px;
+        margin: 0 0 8px;
         text-align: center;
         font-size: 32px;
         line-height: 1.5;
         font-weight: 700;
     }
 
-    .description {
-        margin: 0 auto 40px;
+    .subtitle {
+        margin: 0 0 40px;
         text-align: center;
-        color: #666;
-        font-size: 15px;
-        line-height: 1.8;
+        color: #888;
+        font-size: 13px;
+        line-height: 1.6;
     }
 
+    /* セクションタイトル */
     .section-title {
         margin: 0 0 20px;
         padding-left: 14px;
@@ -67,6 +70,7 @@
         line-height: 1.4;
     }
 
+    /* Xまとめ */
     .summary-list {
         display: flex;
         flex-direction: column;
@@ -100,14 +104,16 @@
         color: #777;
     }
 
+    /* 区切り線 */
     .divider {
         margin: 55px 0;
         border: 0;
         border-top: 1px solid #ddd;
     }
 
+    /* メンバーグループ */
     .group {
-        margin-bottom: 38px;
+        margin-bottom: 40px;
     }
 
     .group-title {
@@ -115,35 +121,54 @@
         padding-bottom: 8px;
         border-bottom: 2px solid #222;
         font-size: 20px;
+        line-height: 1.4;
     }
 
+    /* メンバー */
     .member-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        gap: 10px;
+        gap: 12px;
     }
 
     .member {
         display: block;
-        padding: 14px 15px;
+        padding: 15px;
         border: 1px solid #e5e5e5;
         border-radius: 8px;
         background: #fafafa;
         color: #222;
-        text-decoration: none;
         font-size: 15px;
         line-height: 1.5;
-        text-align: center;
     }
 
-    .member.link:hover {
-        background: #eeeeee;
+    .member-name {
+        margin-bottom: 8px;
+        font-weight: 700;
+        font-size: 16px;
     }
 
-    .member.no-link {
-        cursor: default;
+    .member-links {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
     }
 
+    .member-links a {
+        color: #555;
+        text-decoration: underline;
+        font-size: 14px;
+    }
+
+    .member-links a:hover {
+        color: #000;
+    }
+
+    .no-link {
+        color: #222;
+    }
+
+    /* フッター */
     footer {
         padding: 25px 20px;
         text-align: center;
@@ -152,7 +177,9 @@
         border-top: 1px solid #eee;
     }
 
+    /* スマホ */
     @media (max-width: 700px) {
+
         .content {
             padding: 30px 18px 45px;
         }
@@ -161,8 +188,8 @@
             font-size: 24px;
         }
 
-        .description {
-            font-size: 14px;
+        .subtitle {
+            font-size: 12px;
             margin-bottom: 30px;
         }
 
@@ -189,247 +216,274 @@
     <!-- ヘッダー画像 -->
     <img
         class="header-image"
-        src="https://pbs.twimg.com/profile_banners/1384934196762660865/1789023094/1500x500"
+        src="https://pbs.twimg.com/media/HR4MIUtbAAA1y9k?format=jpg&name=medium"
         alt="ぷいくまRUSTスキッパーズwithゆいねこおいで"
     >
 
     <main class="content">
 
-        <h1>ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ</h1>
+        <!-- タイトル -->
+        <h1>
+            ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ
+        </h1>
 
-        <p class="description">
-            ぷいくまRUSTに関するまとめ・チームメンバー情報を掲載しています。
+        <p class="subtitle">
+            ヘッダー画像by冥界おいでちゃん
         </p>
 
-        <!-- =========================================
+
+        <!-- =====================================
              Xまとめ
-             今後追加するときは、この部分だけ変更
-             ========================================= -->
+             ===================================== -->
 
         <h2 class="section-title">Xまとめ</h2>
 
-        <div class="summary-list" id="summary-list"></div>
+        <div class="summary-list">
 
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2096080946571468891?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>番外編・開幕前日公式練習鯖まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2096061456798323074?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>番外編・前日公式練習鯖ゴロリ先生によるぷいラス初心者講習まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2096346599907844391?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>1日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2096807112001364370?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>2日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2097049951402652087?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>3日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2097351319606665525?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>4日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2097674218079203515?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>5日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+            <a
+                class="summary-link"
+                href="https://x.com/zizizin0zi/status/2098118322248434053?s=20"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span>6日目まとめ</span>
+                <span class="arrow">›</span>
+            </a>
+
+        </div>
+
+
+        <!-- 区切り -->
         <hr class="divider">
 
-        <!-- =========================================
-             メンバー
-             ========================================= -->
+
+        <!-- =====================================
+             現在のメンバー
+             ===================================== -->
 
         <h2 class="section-title">現在のメンバー</h2>
 
-        <div id="members"></div>
+
+        <!-- スキッパーズ -->
+        <section class="group">
+
+            <h3 class="group-title">スキッパーズ</h3>
+
+            <div class="member-list">
+
+                <!-- せんちょさん -->
+                <div class="member">
+                    <div class="member-name">せんちょさん</div>
+                    <div class="member-links">
+                        <a
+                            href="https://t.co/69A5CV0RH1"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+                    </div>
+                </div>
+
+                <!-- 萌音いのり -->
+                <div class="member">
+                    <div class="member-name">萌音いのり</div>
+                    <div class="member-links">
+                        <a
+                            href="https://kick.com/moneinori"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+
+                        <a
+                            href="https://www.twitch.tv/moneinori"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Twitch</a>
+                    </div>
+                </div>
+
+                <!-- 病冥しえる -->
+                <div class="member">
+                    <div class="member-name">病冥しえる</div>
+                </div>
+
+                <!-- 橘白夜 -->
+                <div class="member">
+                    <div class="member-name">橘白夜</div>
+                    <div class="member-links">
+                        <a
+                            href="https://kick.com/tachibanabyakuya"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+                    </div>
+                </div>
+
+                <!-- ガンク -->
+                <div class="member">
+                    <div class="member-name">ガンク</div>
+                    <div class="member-links">
+                        <a
+                            href="https://kick.com/gank443"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- withゆいねこおいで -->
+        <section class="group">
+
+            <h3 class="group-title">withゆいねこおいで</h3>
+
+            <div class="member-list">
+
+                <!-- 冥界おいで -->
+                <div class="member">
+                    <div class="member-name">冥界おいで</div>
+                    <div class="member-links">
+                        <a
+                            href="https://kick.com/kotti-oide"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+                    </div>
+                </div>
+
+                <!-- 結犬 -->
+                <div class="member">
+                    <div class="member-name">結犬</div>
+                    <div class="member-links">
+                        <a
+                            href="https://kick.com/yuiwanko"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >KICK</a>
+                    </div>
+                </div>
+
+                <!-- 月希猫 -->
+                <div class="member">
+                    <div class="member-name">月希猫</div>
+                    <div class="member-links">
+                        <a
+                            href="https://www.twitch.tv/tsukinekogames"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Twitch</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- いのりの犬 -->
+        <section class="group">
+
+            <h3 class="group-title">いのりの犬</h3>
+
+            <div class="member-list">
+
+                <!-- 井上無線 -->
+                <div class="member">
+                    <div class="member-name">井上無線</div>
+                    <div class="member-links">
+                        <a
+                            href="https://www.twitch.tv/inouemusen"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >Twitch</a>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
 
     </main>
+
 
     <footer>
         ぷいくまRUSTスキッパーズwithゆいねこおいでチームまとめ
     </footer>
 
 </div>
-
-
-<script>
-
-/* ==================================================
-   Xまとめ一覧
-
-   今後、9日目などを追加するときは
-   この中に1行追加するだけ。
-
-   書き方：
-   ["表示する名前", "XのURL"],
-   ================================================== */
-
-const summaries = [
-
-    [
-        "番外編・開幕前日公式練習鯖まとめ",
-        "https://x.com/zizizin0zi/status/2096080946571468891?s=20"
-    ],
-
-    [
-        "番外編・前日公式練習鯖ゴロリ先生によるぷいラス初心者講習まとめ",
-        "https://x.com/zizizin0zi/status/2096061456798323074?s=20"
-    ],
-
-    [
-        "1日目まとめ",
-        "https://x.com/zizizin0zi/status/2096346599907844391?s=20"
-    ],
-
-    [
-        "2日目まとめ",
-        "https://x.com/zizizin0zi/status/2096807112001364370?s=20"
-    ],
-
-    [
-        "3日目まとめ",
-        "https://x.com/zizizin0zi/status/2097049951402652087?s=20"
-    ],
-
-    [
-        "4日目まとめ",
-        "https://x.com/zizizin0zi/status/2097351319606665525?s=20"
-    ],
-
-    [
-        "5日目まとめ",
-        "https://x.com/zizizin0zi/status/2097674218079203515?s=20"
-    ],
-
-    [
-        "6日目まとめ",
-        "https://x.com/zizizin0zi/status/2098118322248434053?s=20"
-    ]
-
-];
-
-
-/* ==================================================
-   メンバー
-
-   URLがない人は
-   "url": ""
-   のままにしておく。
-   ================================================== */
-
-const memberGroups = [
-
-    {
-        name: "スキッパーズ",
-        members: [
-            {
-                name: "せんちょさん",
-                url: ""
-            },
-            {
-                name: "萌音いのり",
-                url: ""
-            },
-            {
-                name: "病冥しえる",
-                url: ""
-            },
-            {
-                name: "橘白夜",
-                url: ""
-            },
-            {
-                name: "ガンク",
-                url: ""
-            }
-        ]
-    },
-
-    {
-        name: "withゆいねこおいで",
-        members: [
-            {
-                name: "冥界おいで",
-                url: ""
-            },
-            {
-                name: "結犬",
-                url: ""
-            },
-            {
-                name: "月希猫",
-                url: ""
-            }
-        ]
-    },
-
-    {
-        name: "いのりの犬",
-        members: [
-            {
-                name: "井上無線",
-                url: ""
-            }
-        ]
-    }
-
-];
-
-
-/* ==================================================
-   Xまとめを画面に表示
-   ================================================== */
-
-const summaryList = document.getElementById("summary-list");
-
-summaries.forEach(function(item) {
-
-    const link = document.createElement("a");
-
-    link.className = "summary-link";
-    link.href = item[1];
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-
-    link.innerHTML = `
-        <span>${item[0]}</span>
-        <span class="arrow">›</span>
-    `;
-
-    summaryList.appendChild(link);
-
-});
-
-
-/* ==================================================
-   メンバーを画面に表示
-   ================================================== */
-
-const membersContainer = document.getElementById("members");
-
-memberGroups.forEach(function(group) {
-
-    const groupElement = document.createElement("section");
-
-    groupElement.className = "group";
-
-    const title = document.createElement("h3");
-
-    title.className = "group-title";
-    title.textContent = group.name;
-
-    groupElement.appendChild(title);
-
-    const memberList = document.createElement("div");
-
-    memberList.className = "member-list";
-
-    group.members.forEach(function(member) {
-
-        const memberElement = document.createElement(
-            member.url ? "a" : "div"
-        );
-
-        memberElement.className =
-            "member " +
-            (member.url ? "link" : "no-link");
-
-        memberElement.textContent = member.name;
-
-        if (member.url) {
-            memberElement.href = member.url;
-            memberElement.target = "_blank";
-            memberElement.rel = "noopener noreferrer";
-        }
-
-        memberList.appendChild(memberElement);
-
-    });
-
-    groupElement.appendChild(memberList);
-
-    membersContainer.appendChild(groupElement);
-
-});
-
-</script>
 
 </body>
 </html>
